@@ -1,17 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// component import
+import Login from './component/Login';
+import Home from './component/Home';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+const Navbar = () => {
+  return (
+    <nav style={{ padding: "20px",margin:"0px" , backgroundColor: "lightblue", textAlign:"center"}}>
+      <h3>Welcome to the Math Game !</h3>
+    </nav>
+  );
+};
+
+const linkStyle = {
+  color: "white",
+  textDecoration: "none",
+  margin: "0 10px",
+  fontSize: "18px"
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Navbar />
+      <div style={{ padding: "20px" }}>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+
+export default App;
