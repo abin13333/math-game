@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 // component import
 import Login from './component/Login';
 import Home from './component/Home';
+import LoginForm from './component/userLogin';
+
 
 
 const Navbar = () => {
@@ -30,6 +32,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/userLogin" element={<LoginForm />} />
         </Routes>
       </div>
     </Router>

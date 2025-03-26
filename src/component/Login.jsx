@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {CircularProgress, Box, Paper, Typography , TextField, Link, Button } from "@mui/material";
 import { validateUser } from "./LoginValidation"; // Import server function
+import { Link as RouterLink } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -36,7 +37,7 @@ const Login = () => {
       <Typography variant="h6" gutterBottom>
         Are you a new user?
       </Typography>
-      <Link href="#" underline="hover">
+      <Link component={RouterLink} to="./userLogin" underline="hover">
         Sign Up
       </Link>
 
